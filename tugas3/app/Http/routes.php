@@ -13,4 +13,4 @@
 
 Route::get('/','ViewController@index');
 Route::get('/mahasiswa','Mahasiswa@index');
-//Route::get('/mahasiswa','ViewController@mahasiswa');
+Route::get('/mahasiswa','ViewController@mahasiswa');
