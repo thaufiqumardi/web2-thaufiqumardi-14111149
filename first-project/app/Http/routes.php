@@ -12,5 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
+});
+Route::get('/mahasiswa', function () {
+    return view('mahasiswa');
+});
+Route::get('/tambah-mahasiswa', function () {
+    return view('tambah-mahasiswa');
 });
