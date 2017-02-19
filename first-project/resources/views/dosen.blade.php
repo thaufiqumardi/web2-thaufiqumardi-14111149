@@ -27,8 +27,8 @@
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
-            <li><a href="index.php"><i class="fa fa-dashboard"></i>Dashboard</a></li>
-            <li><a href="mahasiswa.php"><i class="fa fa-group"></i>Mahasiswa</a></li>
+            <li><a href="/"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+            <li><a href="mahasiswa"><i class="fa fa-group"></i>Mahasiswa</a></li>
             <li class="active"><a href="dosen.php"><i class="fa fa-university"></i>Dosen</a></li>
           </ul>
         </section>
@@ -41,7 +41,7 @@
         <section class="content-header">
           <h1>
             <i class="fa fa-university"></i>Data Dosen
-            <a href="tambah-dosen.php" class="btn btn-primary btn-flat"><i class="fa fa-plus"></i> Tambah Dosen</a>
+            <a href="" onclick="error();" class="btn btn-primary btn-flat"><i class="fa fa-plus"></i> Tambah Dosen</a>
           </h1>
 
           <ol class="breadcrumb">
@@ -107,4 +107,10 @@
           </div>
         </section>
       </div><!-- /.content-wrapper -->
+      <script type="text/javascript">
+        function error()
+        {
+          alert('masih Belum ada tambah dosen');
+        }
+      </script>
       @stop
