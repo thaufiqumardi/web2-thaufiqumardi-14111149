@@ -28,7 +28,7 @@
             <li class="header">MAIN NAVIGATION</li>
             <li><a href="index.php"><i class="fa fa-dashboard"></i>Dashboard</a></li>
             <li class="active"><a href="mahasiswa.php"><i class="fa fa-group"></i>Mahasiswa</a></li>
-            <li><a href="index.php"><i class="fa fa-university"></i>Dosen</a></li>
+            <li><a href="dosen"><i class="fa fa-university"></i>Dosen</a></li>
           </ul>
         </section>
         <!-- /.sidebar -->

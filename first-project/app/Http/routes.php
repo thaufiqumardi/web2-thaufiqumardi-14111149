@@ -20,3 +20,6 @@ Route::get('/mahasiswa', function () {
 Route::get('/tambah-mahasiswa', function () {
     return view('tambah-mahasiswa');
 });
+Route::get('/dosen', function () {
+    return view('dosen');
+});

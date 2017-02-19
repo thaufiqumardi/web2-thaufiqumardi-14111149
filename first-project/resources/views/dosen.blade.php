@@ -1,12 +1,13 @@
 @extends('templates.index')
 @section('content')
-<aside class="main-sidebar">
+<!-- Left side column. contains the logo and sidebar -->
+      <aside class="main-sidebar">
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
           <!-- Sidebar user panel -->
           <div class="user-panel">
             <div class="pull-left image">
-              <img src="dist/img/avatar.png" class="img-circle" alt="User Image">
+              <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
               <p>Thaufiq Umardi</p>
@@ -26,9 +27,9 @@
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
-            <li><a href="/"><i class="fa fa-dashboard"></i>Dashboard</a></li>
-            <li class="active"><a href="mahasiswa"><i class="fa fa-group"></i>Mahasiswa</a></li>
-            <li><a href="dosen"><i class="fa fa-university"></i>Dosen</a></li>
+            <li><a href="index.php"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+            <li><a href="mahasiswa.php"><i class="fa fa-group"></i>Mahasiswa</a></li>
+            <li class="active"><a href="dosen.php"><i class="fa fa-university"></i>Dosen</a></li>
           </ul>
         </section>
         <!-- /.sidebar -->
@@ -39,42 +40,32 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Data Mahasiswa
-            <a class="btn btn-primary btn-flat" href="tambah-mahasiswa">Tambah Data Mahasiswa</a>
+            <i class="fa fa-university"></i>Data Dosen
+            <a href="tambah-dosen.php" class="btn btn-primary btn-flat"><i class="fa fa-plus"></i> Tambah Dosen</a>
           </h1>
+
           <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active">Dashboard</li>
+            <li><a href="#"><i class="fa fa-university"></i> Data Dosen</a></li>
+            
           </ol>
         </section>
 
         <!-- Main content -->
         <section class="content">
           <div class="box box-primary">
-            <div class="box-header">
-              <h2 class="box-title">
-                Data Mahasiswa
-              </h2>
-              
-            </div>
             <div class="box-body">
-              <table class="table table-bordered table-hover" id="example2">
+              <table class="table table-bordered table-hover" id="data-dosen">
                 <thead>
                   <th>ID</th>
-                  <th>NIM</th>
+                  <th>NIDN</th>
                   <th>Nama</th>
-                  <th>Jenis Kelamin</th>
-                  <th>Jurusan</th>
-                  <th>Alamat</th>
+                  <th>Alamat Tinggal</th>
                   <th>Aksi</th>
                 </thead>
                 
                 
-                
               </table>
-            </div>
-          </div>
-<div class="modal fade" id="modal_edit"  data-backdrop="static" data-keyboard="false">
+              <div class="modal fade" id="modal_edit"  data-backdrop="static" data-keyboard="false">
               <div class="modal-dialog">
                 <div class="modal-content" style="margin-top:100px;">
                   
@@ -93,7 +84,7 @@
                 </div>
               </div>
             </div>
-          <div class="modal fade" id="modal_delete_m_n"  data-backdrop="static" data-keyboard="false">
+            <div class="modal fade" id="modal_delete_m_n"  data-backdrop="static" data-keyboard="false">
               <div class="modal-dialog">
                 <div class="modal-content" style="margin-top:100px;">
                   
@@ -112,24 +103,8 @@
                 </div>
               </div>
             </div>
-             <script> 
-          function confirm_modal(delete_url,title)
-          {
-            jQuery('#modal_delete_m_n').modal('show', {backdrop: 'static',keyboard :false});
-            jQuery("#modal_delete_m_n .grt").text(title);
-            document.getElementById('delete_link_m_n').setAttribute("href" , 'mahasiswa.php?delete_id='+delete_url);
-            document.getElementById('delete_link_m_n').focus();
-          }
-          function confirm_edit(edit_id,name)
-          {
-            jQuery('#modal_edit').modal('show', {backdrop: 'static',keyboard :false});
-            jQuery("#modal_edit .grt").text(name);
-            document.getElementById('edit_link').setAttribute("href" , 'edit-mahasiswa.php?edit_id='+edit_id);
-            document.getElementById('edit_link').focus();
-          }
-          </script>
+            </div>
+          </div>
         </section>
       </div><!-- /.content-wrapper -->
-      
-
-@stop
+      @stop
