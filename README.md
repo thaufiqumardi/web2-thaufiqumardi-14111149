@@ -12,3 +12,7 @@
 
 	#Tugas4
 		Migrate ke database 
+	#Tugas5
+		ELOQUENT
+	#Tugas6
+		UAS
