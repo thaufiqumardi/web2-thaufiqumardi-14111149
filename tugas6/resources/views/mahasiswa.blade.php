@@ -77,9 +77,9 @@
                   <td>{{$mhs->jurusan}}</td>
                   <td>{{$mhs->alamat}}</td>
                   <td><a href="#" class="text-success"  data-toggle="tooltip" data-toggle="modal" title="Edit" 
-                    onclick="confirm_edit();"><i class="fa fa-edit"></i></a>
+                    onclick="confirm_edit('{{$mhs->id}}','{{$mhs->nama}}');"><i class="fa fa-edit"></i></a>
                     <a href="#" class="text-danger" data-toggle="tooltip" data-toggle="modal" title="Delete"
-                    onclick="confirm_modal();">
+                    onclick="confirm_modal('{{$mhs->id}}','{{$mhs->nama}}');">
                       <i class="fa fa-trash"></i>
                     </a></td>
                 </tr>
@@ -131,14 +131,14 @@
           {
             jQuery('#modal_delete_m_n').modal('show', {backdrop: 'static',keyboard :false});
             jQuery("#modal_delete_m_n .grt").text(title);
-            document.getElementById('delete_link_m_n').setAttribute("href" , 'mahasiswa.php?delete_id='+delete_url);
+            document.getElementById('delete_link_m_n').setAttribute("href" , '/mahasiswa/delete/'+delete_url);
             document.getElementById('delete_link_m_n').focus();
           }
           function confirm_edit(edit_id,name)
           {
             jQuery('#modal_edit').modal('show', {backdrop: 'static',keyboard :false});
             jQuery("#modal_edit .grt").text(name);
-            document.getElementById('edit_link').setAttribute("href" , 'edit-mahasiswa.php?edit_id='+edit_id);
+            document.getElementById('edit_link').setAttribute("href" , '/mahasiswa/edit/'+edit_id);
             document.getElementById('edit_link').focus();
           }
           </script>

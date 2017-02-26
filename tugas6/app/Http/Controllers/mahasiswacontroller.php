@@ -14,6 +14,10 @@ class mahasiswacontroller extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         $data = mahasiswa::all();
@@ -76,7 +80,8 @@ class mahasiswacontroller extends Controller
      */
     public function edit($id)
     {
-        //
+        $data= mahasiswa::find($id);
+        return view('edit-mahasiswa',compact('data'));
     }
 
     /**
@@ -88,7 +93,15 @@ class mahasiswacontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $mahasiswa= mahasiswa::find($id);
+        $mahasiswa -> nim = $request->nim;
+        $mahasiswa -> nama = $request->nama;
+        $mahasiswa -> jenis_kelamin = $request->jenis_kelamin;
+        $mahasiswa -> jurusan= $request->jurusan;
+        $mahasiswa -> alamat = $request->alamat;
+        $mahasiswa -> update();
+        Session::flash('flash_message','Data berhasil Diperbarui');
+        return redirect()->back();
     }
 
     /**
@@ -99,6 +112,8 @@ class mahasiswacontroller extends Controller
      */
     public function destroy($id)
     {
-        //
+        $mahasiswa = mahasiswa::find($id);
+        $mahasiswa ->delete();
+        return redirect('mahasiswa');
     }
 }

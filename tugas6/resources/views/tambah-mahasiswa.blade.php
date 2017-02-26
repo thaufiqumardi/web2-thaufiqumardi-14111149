@@ -77,6 +77,7 @@
                     <div class="form-group">
                     <label for="jenis_kelamin" class="control-label">Jenis Kelamin</label>
                     <select class="form-control" name="jenis_kelamin">
+                      <option selected disabled>Jenis Kelamin:</option>
                       <option>Laki-Laki</option>
                       <option>Perempuan</option>
                     </select>
@@ -88,6 +89,7 @@
                     <div class="form-group">
                     <label for="jurusan" class="control-label">Jurusan</label>
                     <select class="form-control" name="jurusan">
+                      <option selected disabled>Silahkan Pilih Jurusan</option>
                       <option>Teknik Industri</option>
                       <option>Teknik Informatika</option>
                       <option>Desain Komunikasi Visual</option>

@@ -1,6 +1,12 @@
 @extends('templates.index')
 @section('content')
-  <!-- Left side column. contains the logo and sidebar -->
+ <!-- Left side column. contains the logo and sidebar -->
+ @if(Auth::guest())
+    <script>
+        window.alert('login');
+        window.location.href('login');
+    </script>
+ @else
       <aside class="main-sidebar">
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
@@ -10,7 +16,7 @@
               <img src="dist/img/avatar.png" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-              <p>Thaufiq Umardi</p>
+              <p>{{Auth::User()->name}}</p>
               <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
           </div>
@@ -87,6 +93,5 @@
           </div>
         </section>
       </div><!-- /.content-wrapper -->
-      
-
-@stop
+      @endif
+@endsection

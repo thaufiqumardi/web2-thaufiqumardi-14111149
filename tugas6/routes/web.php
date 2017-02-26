@@ -11,12 +11,15 @@ use App\mahasiswa;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'HomeController@index');
+
 Route::get('/mahasiswa', 'mahasiswacontroller@index');
 Route::get('/tambah-mahasiswa','mahasiswacontroller@tambahmahasiswa');
 Route::post('/tambah-mahasiswa/action','mahasiswacontroller@store');
+Route::get('/mahasiswa/edit/{id}','mahasiswacontroller@edit');
+Route::patch('/mahasiswa/update/{id}','mahasiswacontroller@update');
+Route::get('/mahasiswa/delete/{id}','mahasiswacontroller@destroy');
+// Route::get('/login','loginController@index');
 // Route::get('/dosen',function(){
 // 	return view('dosen');
 // });
@@ -47,3 +50,6 @@ Route::post('/tambah-mahasiswa/action','mahasiswacontroller@store');
 // 	$mahasiswa = mahasiswa::find(1);
 // 	$mahasiswa->delete();
 // });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
